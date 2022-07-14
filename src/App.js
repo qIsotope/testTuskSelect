@@ -5,7 +5,7 @@ import { Styles } from './components/Styles';
 import { useSearchParams } from 'react-router-dom'
 const parameters = {}
 function App() {
-	
+
 	let [searchParams, setSearchParams] = useSearchParams();
 
 	if (searchParams.get('service_slug')) {
@@ -21,7 +21,6 @@ function App() {
 			<Terms parameters={parameters} />
 			<BrandTerms parameters={parameters} />
 			<Styles parameters={parameters} />
-			<button onClick={() => search()}>SEND</button>
 		</div>
 	);
 }
