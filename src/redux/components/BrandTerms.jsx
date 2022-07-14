@@ -10,13 +10,12 @@ export const BrandTerms = ({ parameters }) => {
 	const { data, isFetching, isLoading, isError, error } = useGetBrandTermsQuery('')
 	let [searchParams, setSearchParams] = useSearchParams();
 
-	const servicePlug = searchParams.get('b') || '';
+	const servicePlug = searchParams.get('brand_slug') || '';
 	const defaultVal = data?.find(b => b.value === servicePlug)
 
 	const onChange = (e) => {
-		parameters.b = e.value
+		parameters.brand_slug = e.value
 		setSearchParams(parameters)
-		console.log(parameters)
 	}
 
 	if (isError) {

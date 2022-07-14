@@ -10,13 +10,12 @@ import { Error } from './Error'
 export const Terms = ({ parameters }) => {
 	const { data, isFetching, isLoading, isError, error } = useGetTermsQuery('')
 	let [searchParams, setSearchParams] = useSearchParams();
-	const servicePlug = searchParams.get('s') || '';
+	const servicePlug = searchParams.get('service_slug') || '';
 	const defaultVal = data?.find(s => s.value === servicePlug)
 
 	const onChange = (e) => {
-		parameters.s = e.value
+		parameters.service_slug = e.value
 		setSearchParams(parameters)
-		console.log(parameters)
 	}
 
 	if (isError) {
