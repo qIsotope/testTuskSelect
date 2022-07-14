@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetBrandTermsQuery } from '../services/selectApi'
+import { useGetBrandTermsQuery } from '../redux/services/selectApi'
 import Select from 'react-select'
 import { Loader } from './Loader'
 import { useSearchParams } from 'react-router-dom'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetTermsQuery } from '../services/selectApi'
+import { useGetTermsQuery } from '../redux/services/selectApi'
 import Select from 'react-select'
 import { Loader } from './Loader'
 import { useSearchParams } from 'react-router-dom'
@@ -13,7 +13,7 @@ export const Terms = ({ parameters }) => {
 	const servicePlug = searchParams.get('service_slug') || '';
 	const defaultVal = data?.find(s => s.value === servicePlug)
 
-	
+
 
 	const onChange = (e) => {
 		parameters.service_slug = e.value

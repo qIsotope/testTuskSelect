@@ -7,7 +7,7 @@ export const myApi = createApi({
 
 
 	reducerPath: 'selectApi',
-	baseQuery: fetchBaseQuery({ baseUrl: 'https://autobooking.com/api/test/v1/search/' }),
+	baseQuery: fetchBaseQuery({ baseUrl: 'https://onboarding.art-code.team/api/test/v1/search/' }),
 	endpoints: (builder) => ({
 		getTerms: builder.query({
 			query: () => `terms`,
@@ -16,7 +16,7 @@ export const myApi = createApi({
 					id: i.id,
 					value: i.slug,
 					label: i.label
-				}
+				}	
 			}),
 		}),
 		getBrandTerms: builder.query({
