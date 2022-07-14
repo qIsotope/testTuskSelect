@@ -9,7 +9,6 @@ import { useSearchParams } from 'react-router-dom'
 
 export const Styles = ({ parameters }) => {
 	const { data, isFetching, isLoading, isError, error } = useGetStylesQuery('')
-	console.log(data);
 	let [searchParams, setSearchParams] = useSearchParams();
 	const style = searchParams.get('style_slug') || '';
 	const defaultVal = data?.find(b => b.value === style)
@@ -18,7 +17,6 @@ export const Styles = ({ parameters }) => {
 		parameters.style_slug = e.value
 		setSearchParams(parameters)
 	}
-
 
 	if (isError) {
 		return (
