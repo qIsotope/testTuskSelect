@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrandTerms } from './redux/components/BrandTerms';
+import { Terms } from './redux/components/Terms';
+import { Styles } from './redux/components/Styles';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const parameters = {}
+
+	return (
+		<div className="App">
+			<Terms parameters={parameters} />
+			<BrandTerms parameters={parameters} />
+			<Styles parameters={parameters} />
+
+		</div>
+	);
 }
 
 export default App;
