@@ -13,6 +13,8 @@ export const Terms = ({ parameters }) => {
 	const servicePlug = searchParams.get('service_slug') || '';
 	const defaultVal = data?.find(s => s.value === servicePlug)
 
+	
+
 	const onChange = (e) => {
 		parameters.service_slug = e.value
 		setSearchParams(parameters)
