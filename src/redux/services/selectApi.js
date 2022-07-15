@@ -16,7 +16,7 @@ export const myApi = createApi({
 					id: i.id,
 					value: i.slug,
 					label: i.label
-				}	
+				}
 			}),
 		}),
 		getBrandTerms: builder.query({

@@ -1,26 +1,23 @@
 import './App.css';
-import { BrandTerms } from './components/BrandTerms';
-import { Terms } from './components/Terms';
-import { Styles } from './components/Styles';
 import { useSearchParams } from 'react-router-dom'
+import { getExistingValues } from './utils/getExistingValues';
+import { useEffect } from 'react';
+import { TermsContainer } from './components/Terms/TermsContainer';
+import { BrandTermsContainer } from './components/BrandTerms/BrandTermsContainer';
+import { StylesContainer } from './components/Styles/StylesContainer';
 const parameters = {}
 function App() {
 
-	let [searchParams, setSearchParams] = useSearchParams();
-
-	if (searchParams.get('service_slug')) {
-		parameters.service_slug = searchParams.get('service_slug')
-	} if (searchParams.get('brand_slug')) {
-		parameters.brand_slug = searchParams.get('brand_slug')
-	} if (searchParams.get('style_slug')) {
-		parameters.style_slug = searchParams.get('style_slug')
-	}
+	let [searchParams] = useSearchParams();
+	useEffect(() => {
+		getExistingValues(parameters, searchParams)
+	}, [])
 
 	return (
 		<div className="App">
-			<Terms parameters={parameters} />
-			<BrandTerms parameters={parameters} />
-			<Styles parameters={parameters} />
+			<TermsContainer parameters={parameters} />
+			<BrandTermsContainer parameters={parameters} />
+			<StylesContainer parameters={parameters} />
 		</div>
 	);
 }
